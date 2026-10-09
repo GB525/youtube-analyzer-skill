@@ -4,6 +4,12 @@
 
 The skill gathers YouTube captions, the expanded description, chapters, and resource links; evaluates claims and commercial intent; checks linked GitHub repositories; and uses the optional Watch skill where visuals could change the conclusions. Supporting evidence is saved when file tools are available. The complete analysis remains in chat.
 
+## Website and sample assessment
+
+[Visit the YouTube Analyzer website](https://youtube-analyzer-grevalyn.grevalyn.chatgpt.site/) to explore the workflow, view the infographic, read a complete sample assessment, and find installation instructions.
+
+The sample assessment, **YTA5a: Matt Pocock Skills Repo**, includes the original YouTube video link and a note that Watch was not used. The website introduces the skill; video analysis happens in your agent after installation.
+
 ## Install in Codex
 
 Paste this into Codex:
