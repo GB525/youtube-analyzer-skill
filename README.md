@@ -16,12 +16,12 @@ Paste this into Codex:
 
 ```text
 Use $skill-installer to install youtube-analyzer-skill from:
-https://github.com/GB525/youtube-analyzer-skill/tree/v1.1.0/skills/youtube-analyzer-skill
+https://github.com/GB525/youtube-analyzer-skill/tree/v1.2.0/skills/youtube-analyzer-skill
 ```
 
-This installs the published v1.1.0 release. The v1.2.0 source update adds opt-in stack comparison and automatic local frame review; it is not yet a published release. These new behaviors are not included in the v1.1.0 download. Start a new turn or session afterward; restart the app if the skill does not appear.
+This installs v1.2.0, which adds opt-in stack comparison and automatic local frame-and-caption review. Existing installations do not update automatically; ask your agent to update the installed skill using the versioned URL above. Start a new turn or session afterward; restart the app if the skill does not appear.
 
-Alternatively, download `youtube-analyzer-skill-v1.1.0.zip` from [Releases](https://github.com/GB525/youtube-analyzer-skill/releases). Extract the `youtube-analyzer-skill` folder into your agent's skills directory, preserving its `agents/` and `references/` folders. For an existing installation, ask the agent to update it rather than creating duplicate copies. Codex's skill installer can select the proper local destination; no particular operating system or personal folder is assumed here.
+Alternatively, download `youtube-analyzer-skill-v1.2.0.zip` from [v1.2.0 release](https://github.com/GB525/youtube-analyzer-skill/releases/tag/v1.2.0). Extract the `youtube-analyzer-skill` folder into your agent's skills directory, preserving its `agents/` and `references/` folders. For an existing installation, ask the agent to update it rather than creating duplicate copies. Codex's skill installer can select the proper local destination; no particular operating system or personal folder is assumed here.
 
 ## Use it
 
