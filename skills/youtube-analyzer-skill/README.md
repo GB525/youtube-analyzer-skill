@@ -68,7 +68,7 @@ A final coverage note explains caption provenance, checked links, reviewed video
 - Captions, private resources, and linked pages may be inaccessible. The agent reports gaps rather than fabricating results.
 - Watch is optional. Each recipient supplies their own accounts, engine configuration, and credentials; provider charges or rate limits may apply.
 - Gemini observations are fallible model reports, not an independent security audit. Spoken claims, visuals, external facts, and interpretation remain distinguishable.
-- The skill is an instruction workflow, not a standalone application or a guarantee of retrieval. It has been structurally validated; the predecessor workflow was exercised on a real video. A full fresh-account installation and every provider/platform combination have not been tested.
+- The skill is an instruction workflow, not a standalone application or a guarantee of retrieval. It has been structurally validated, and local caption retrieval, frame extraction, and host-agent inspection were exercised on a 30-second YouTube interval on Windows. Auto-dubbed caption selection required an explicit English track; the instructions now require checking the selected language. A full fresh-account installation and every provider/platform combination have not been tested.
 - Repository inspection does not authorize installing or executing linked projects. Analysis does not authorize publishing, contacting people, or modifying product implementations.
 
 ## License and credits
