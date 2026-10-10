@@ -26,13 +26,13 @@ For repositories central to the video or relevant to adoption, record the inspec
 - What actually ships, and what the demonstrated environment adds separately.
 - Runtime/dependency burden, platform compatibility, configuration, credentials/permissions, external services, and documented costs.
 - Published security/update practices and concrete concerns evident in the inspected files. This is a bounded adoption review, not a comprehensive security audit.
-- Fit with current tooling, overlap with existing practices, maintenance responsibility, and whether selective curation is more useful than wholesale adoption.
+- General maintenance and adoption burden. Evaluate fit with the user's current tooling, overlap with existing practices, and selective curation only when stack comparison was selected at intake.
 
 Separate static repository inspection from running tests or installing the project. Do not execute repository code merely to analyze it. Name unresolved questions and inspect additional primary files only when they can materially change the recommendation. A prior pinned review does not establish the state of today's revision.
 
 ## Prior assessments and project fit
 
-When a resource may overlap with the user's work, search available chat/project listings and known project files for its identity or URL. Read the actual assessment and current adoption record; a chat title or summary is only a discovery aid. Read-only inspection does not require messaging another chat. Do not send messages to other chats without explicit user authorization.
+Follow the stack-comparison choice resolved in SKILL.md. In standalone mode, skip this entire prior-context workflow; do not list chats, search personal project files, or read adoption records. When comparison was selected and a resource may overlap with the user's work, search available chat/project listings and known project files for its identity or URL. Read the actual assessment and current adoption record; a chat title or summary is only a discovery aid. Read-only inspection does not require messaging another chat. Do not send messages to other chats without explicit user authorization.
 
 Distinguish a recommendation from an implemented change. Corroborate implementation through the receiving project's current records when accessible. Preserve project-specific boundaries: shared engineering standards do not mean a product has installed a runtime, shared credentials, or deployed a tool. If no relevant history is found, say that rather than inventing continuity.
 
@@ -45,8 +45,10 @@ Use the task's designated deliverable directory, normally `outputs/`, with a vid
 - **link-checks.md:** original and final public URLs, purpose, access result, checked date, key findings, and repository revision when inspected. Do not expose sensitive query parameters.
 - **watch-report-N.md:** each full Watch response, including source, requested interval, actual coverage when known, engine, and reported errors. Save directly from returned output where possible; if copied afterward, identify that provenance. Keep reported token usage if provided, without calling it a measured price.
 
+For local Watch review, also save **visual-observations.md** with inspected frame timestamps, requested questions, visible facts, uncertainty and actual intervals. Preserve the extractor report separately; it is not an interpreted visual assessment. Record failed extraction as a gap rather than calling captions visual evidence.
+
 Do not generate empty Watch reports when Watch was unnecessary. Record why in coverage. If saving is unavailable, deliver the full analysis in chat and explain the artifact limitation. Provide only a few meaningful links in the final response; the user should not have to read Markdown to obtain the answer.
 
 ## Completion criteria
 
-The analysis is complete when accessible speech evidence and the full description have been considered, every description link has a recorded access/result status, material visual gaps have been reviewed or disclosed, relevant prior work has been checked when accessible, and the complete chat response distinguishes evidence from judgment. Failures can yield a bounded assessment; do not label that as full evidence coverage. Resolve material contradictions before presenting a confident recommendation.
+The analysis is complete when accessible speech evidence and the full description have been considered, every description link has a recorded access/result status, material visual gaps have been reviewed or disclosed, relevant prior work has been checked when comparison was selected and records are accessible, and the complete chat response distinguishes evidence from judgment. Failures can yield a bounded assessment; do not label that as full evidence coverage. Resolve material contradictions before presenting a confident recommendation.
