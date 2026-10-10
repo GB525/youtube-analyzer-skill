@@ -13,7 +13,7 @@ Use $skill-installer to install youtube-analyzer-skill from:
 https://github.com/GB525/youtube-analyzer-skill/tree/v1.1.0/skills/youtube-analyzer-skill
 ```
 
-This installs the tagged version, rather than an unreviewed future update. Start a new turn or session afterward; restart the app if the skill does not appear.
+This installs the published v1.1.0 release. The v1.2.0 source update adds opt-in stack comparison and automatic local frame review; it is not yet a published release. These new behaviors are not included in the v1.1.0 download. Start a new turn or session afterward; restart the app if the skill does not appear.
 
 Alternatively, download `youtube-analyzer-skill-v1.1.0.zip` from [Releases](https://github.com/GB525/youtube-analyzer-skill/releases). Extract the `youtube-analyzer-skill` folder into your agent's skills directory, preserving its `agents/` and `references/` folders. For an existing installation, ask the agent to update it rather than creating duplicate copies. Codex's skill installer can select the proper local destination; no particular operating system or personal folder is assumed here.
 
@@ -24,7 +24,13 @@ Use $youtube-analyzer-skill to assess this video:
 [paste the YouTube URL]
 ```
 
-You can add a decision question, such as whether a tool fits your workflow, which claims are demonstrated, or whether a tutorial can be reproduced. No personal project history is required. If you provide relevant prior work, the skill can compare it with the video's recommendations.
+You can add a decision question, such as which claims are demonstrated or whether a tutorial can be reproduced. Before personal stack/project research, the skill asks whether to include that comparison:
+
+- **No, standalone (quicker)** — skips personal project research for this assessment.
+- **Yes, compare with my stack** — includes relevant project context and fit analysis.
+- **Never compare (remember this)** — saves the preference locally and skips the question on future assessments.
+
+Skipping stack comparison usually gives quicker results by removing the extra research; source retrieval and visual checks can still take time. You can request comparison explicitly for one video even with a remembered no-comparison preference, or ask the skill to resume asking. Preferences live in `~/.config/youtube-analyzer-skill/preferences.json`, outside the skill package. No preference is saved merely because a default option is displayed. No personal project history is required.
 
 ## Optional: install Watch for visual evidence
 
@@ -35,9 +41,11 @@ Use $skill-installer to install the watch skill from:
 https://github.com/bradautomates/claude-video/tree/main/skills/watch
 ```
 
-Then follow Watch's setup instructions and choose your engine. Gemini processes video through Google and needs your own API key; the local engine has different dependencies. Refer to Watch's current documentation for setup, data handling, and supported environments. This repository includes no Watch code, provider credentials, or automated installer.
+For analyzer visual checks, **local frame-and-caption review is the default**: your agent retrieves accessible media/captions, selects relevant intervals, extracts frames, and inspects them automatically. Supply only the video URL and question; you do not prepare snippets. The local path requires download and frame-extraction tools (yt-dlp and FFmpeg/ffprobe). Existing captions need no additional speech model. Frame sampling can miss short transitions and does not analyze all audiovisual information continuously; the agent uses focused timestamps and reports coverage limits. Media extraction is local; interpretation happens in your agent's chat.
 
-**Targeted clips are preferred over whole-video processing.** The analyzer reads the transcript first and asks focused visual questions. When broad review is needed, it breaks longer footage into roughly **10–15-minute sections**, adjusts boundaries around demonstrations, preserves original timestamps, and combines the findings. These are practical defaults, not guaranteed provider limits. Smaller ranges may be required.
+You can explicitly choose Gemini for a review or ask the analyzer to remember that choice. Gemini sends the source to Google and needs your own API key. The analyzer's optional remembered engine preference is `visual_review_engine` (`local` or `gemini`) in the same private preference file. Separately invoked Watch retains its own saved settings. Follow Watch's setup and transcription choices; neither a different engine nor a speech model is selected silently after a failure. This repository includes no Watch code, provider credentials, or automated installer.
+
+**Short targeted intervals are preferred over whole-video processing.** The analyzer reads the transcript first and selects focused visual questions, usually reviewing tens of seconds to a few minutes around each consequential demonstration. Media can be downloaded once and reused for subsequent checks; current Watch may download the full video even for a short interval. When broad review is needed, it breaks longer footage into roughly **10–15-minute sections**, adjusts boundaries around demonstrations, preserves original timestamps, and combines the findings. These are practical defaults, not guaranteed provider limits. Smaller ranges may be required.
 
 ## What you get
 
@@ -50,7 +58,7 @@ The chat analysis includes:
 5. Tech stack, tools, resources, and relevant repository findings
 6. Workflow or action plan
 7. Products, hardware, and gear
-8. Fit with your existing work, when available, and recommended next steps
+8. Recommended next steps, plus fit with your existing work only when selected
 
 A final coverage note explains caption provenance, checked links, reviewed video ranges, and missing evidence. Where file tools are available, the agent saves the analysis, detailed source notes, link-check record, and full Watch responses. A summary is never presented as a verbatim transcript.
 

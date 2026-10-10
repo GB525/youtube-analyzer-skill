@@ -1,6 +1,6 @@
 interface:
   display_name: "YouTube Analyzer Skill"
   short_description: "Analyze videos, checked links, and visual evidence"
-  default_prompt: "Use $youtube-analyzer-skill to analyze this YouTube video, check its description links, resolve visual evidence gaps with Watch, and deliver the full assessment in chat."
+  default_prompt: "Use $youtube-analyzer-skill to assess this YouTube video, resolve stack comparison using its intake and remembered preferences, check its description links, resolve visual review using its engine preference workflow, and deliver the full assessment in chat."
 policy:
   allow_implicit_invocation: true
